@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  .d1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .btn{
+    width: 200px;
+    background-color: lightsalmon;
+    color: #fff;
+    border: 0;
+  }
+  .btn:focus{
+    outline: none;
+  }
+  .btn:hover{
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <div class="d1">
+    <button class="btn">发送</button>
+  </div>
+  <div id="app">
+    <input type="text" v-model="message">
+    <div>{{message}}</div>
+    <ul>
+      <li>{{message}}</li>
+      <li>{{names.hanmeimei}}</li>
+    </ul>
+  </div>
+  <script src="watcher.js"></script>
+  <script src="observer.js"></script>
+  <script src="./compile.js"></script>
+  <script src="./MVVM.js"></script>
+  <script>
+    let vm = new MVVM({
+      el:"#app",
+      data:{
+        message:"hello world",
+        names:{
+          hanmeimei:'韩梅梅'
+        }
+      }
+    })
+  </script>
+  <script>
+    var btn = document.getElementsByClassName('btn')[0]
+  </script>
+</body>
+</html>
